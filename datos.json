@@ -1,0 +1,28 @@
+{
+ "schema": 1,
+ "metaUpdatedAt": 1795519425337,
+ "onboarded": true,
+ "profile": {
+  "sex": "hombre",
+  "age": 21,
+  "height": 172,
+  "weight": 70
+ },
+ "settings": {
+  "days": 3,
+  "restMain": 150,
+  "restAcc": 90
+ },
+ "choices": {},
+ "unavailable": {},
+ "sessions": [],
+ "deleted": [],
+ "bodyweight": [
+  {
+   "id": "bw_2026-11-24",
+   "date": "2026-11-24",
+   "kg": 70,
+   "updatedAt": 1795519425337
+  }
+ ]
+}
