@@ -5,7 +5,11 @@ $types = @{ '.html'='text/html; charset=utf-8'; '.js'='text/javascript; charset=
   '.json'='application/json'; '.webmanifest'='application/manifest+json'; '.svg'='image/svg+xml'; '.png'='image/png'; '.md'='text/plain; charset=utf-8' }
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$Port/")
-$listener.Start()
+try { $listener.Start() } catch {
+  Write-Host "El puerto $Port ya está en uso: seguramente GymCoach ya está abierto en otra ventana."
+  Write-Host "Abre http://localhost:$Port/ en el navegador, o usa otro puerto: serve.ps1 -Port 8081"
+  exit 1
+}
 Write-Host "GymCoach en http://localhost:$Port/"
 while ($listener.IsListening) {
   $ctx = $listener.GetContext()
